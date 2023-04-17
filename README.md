@@ -36,6 +36,7 @@ Jogo do FlappyBird, onde você terá que passar com um pássaro entre canos e ir
 ## Funcionalidades ⚙️
 
 ✔️ clicar na tela para que o pássaro possa sair voando.
+
 ✔️ desviar dos canos.
 
 ## Distribuição
