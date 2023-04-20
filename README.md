@@ -70,6 +70,13 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 
 ## Testes realizados
 
+1-Telas do jogo.
+![Screenshot_31](https://user-images.githubusercontent.com/83432335/233458826-e318eb39-fae2-4c91-9a9c-e699ea1760ad.png)
+
+=======================================================================================================================================================================
+![screen480x480 0](https://user-images.githubusercontent.com/83432335/233459180-3b5fe279-cfac-4ba1-a543-35cbd41da355.jpeg)
+
+
 ## Banco de Dados 🗂️
 
 ## Linguagens, dependencias e libs utilizadas 📚
