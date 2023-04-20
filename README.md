@@ -72,11 +72,19 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 
 1-Telas do jogo.
 
+![Captura de tela 2023-04-20 203942](https://user-images.githubusercontent.com/83432335/233510423-39c0d963-34e3-4004-a0dd-8f54fd673d0a.png)
+
+===========================================================================
+
 ![Screenshot_31](https://user-images.githubusercontent.com/83432335/233458826-e318eb39-fae2-4c91-9a9c-e699ea1760ad.png)
 
 ===========================================================================
 
 ![screen480x480 0](https://user-images.githubusercontent.com/83432335/233459180-3b5fe279-cfac-4ba1-a543-35cbd41da355.jpeg)
+
+===========================================================================
+
+![p](https://user-images.githubusercontent.com/83432335/233510466-2b0821fd-189c-4de1-8d7b-9ede215e8689.png)
 
 
 ## Banco de Dados 🗂️
