@@ -23,6 +23,7 @@ import java.util.Random;
 
 
 public class MyGdxGame extends ApplicationAdapter {
+	//variaveis
 	private SpriteBatch batch;
 	private Texture[] passaros;
 	private Texture fundo;
@@ -84,6 +85,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		detectarColisoes();
 
 	}
+	//esta inicializando as texturas utilizadas no jogo
 	private void inicializarTexturas()
 	{
         passaros = new Texture[3];
@@ -96,7 +98,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		canoTope = new Texture("cano_topo_maior.png");
 		gameOver = new Texture("game_over.png");
 	}
-
+       //esta iniciando os objetos, como a posição inicial vertical do pássaro, a posição horizontal do cano, o espaço entre os canos etc...
 	private void inicializaObjetos()
 	{
 		batch = new SpriteBatch();
@@ -137,7 +139,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		viewport = new StretchViewport(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, camera);
 
 	}
-
+        //Esta verificando o estado atual do jogo, caso o estado esteja no 0 o jogador deve toca na tela para o jogo iniciar, ja no estado 1 ele esta se movendo, no estado 2 significa que o jogador morreu, ele deve tocar na tela para reiniciar
 	private void verificarEstadoJogo()
 	{
 		boolean toqueTela = Gdx.input.justTouched();
@@ -189,7 +191,7 @@ public class MyGdxGame extends ApplicationAdapter {
 			}
 		    }
 	    }
-
+            //esta verificando a colição no jogo, caso o passaro bata em algum cano o estado do jogo sera 2 que quer dizer que o jogador morreu, ele deve tocar na tela para reiniciar o jogo
 	    private  void detectarColisoes()
 		{
 		  circuloPassaro.set(
@@ -220,7 +222,7 @@ public class MyGdxGame extends ApplicationAdapter {
 			  }
 		  }
 		}
-
+                //Esta desenhando e renderizando as imagens na tela como o passaro,tela de fundo,os canos e a tela de game over
 		private void desenharTexturas()
 		{
 			batch.setProjectionMatrix(camera.combined);
@@ -248,7 +250,7 @@ public class MyGdxGame extends ApplicationAdapter {
 			}
 			batch.end();
 		}
-
+                //esta vendo se o jogador passo entre os canos, caso ele tenha passado marca um ponto
 		public  void  validarPontos()
 		{
 			if( posicaoCanoHorizontal < 50-passaros[0].getWidth() )
@@ -268,13 +270,13 @@ public class MyGdxGame extends ApplicationAdapter {
                variacao = 0;
 			}
 		}
-
+       //esta ajustando a viewport do jogo
 	@Override
 	public  void  resize(int width, int height){
 		viewport.update(width, height);
 	}
 
-
+       //Ele é usado para liberar os recursos do jogo, quando o jogador sai do jogo
 	@Override
 	public void dispose () {
 
