@@ -166,7 +166,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		    	passouCano = false;
 			}
 		    if(posicaoInicialVerticalPassaro > 0 || toqueTela)
-		    {
+		    
                 posicaoInicialVerticalPassaro = posicaoInicialVerticalPassaro - gravidade;
                 gravidade++;
 			}else if (estadoJogo == 2)
@@ -189,7 +189,7 @@ public class MyGdxGame extends ApplicationAdapter {
                     posicaoCanoHorizontal = larguraDispositivo;
 				}
 			}
-		    }
+		    
 	    }
             //esta verificando a colição no jogo, caso o passaro bata em algum cano o estado do jogo sera 2 que quer dizer que o jogador morreu, ele deve tocar na tela para reiniciar o jogo
 	    private  void detectarColisoes()
