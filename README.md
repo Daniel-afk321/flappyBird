@@ -31,13 +31,17 @@
 
 ## Descrição do projeto
 
-Jogo do FlappyBird, onde você terá que passar com um pássaro entre canos e ir o mais longe possível.
+Jogo do FlappyBird, So que modificado, onde você terá uma pomba, e tera que passa pelos canos para marca os pontos, você poderá também comer dois tipos diferentes de pão onde o pão dourado te dará 10 pontos e o pão de prata te dará 5 pontos, caso voce bata em algum cano ira aparecer a tela de game over onde você poderá ver qual foi a maior pontuação que você fez já no jogo.
 
 ## Funcionalidades ⚙️
 
-✔️ clicar na tela para que o pássaro possa sair voando.
+✔️ clicar na tela para que o pombo possa sair voando.
 
 ✔️ desviar dos canos.
+
+✔️ comer o pão dourado para ganhar 10 pontos.
+
+✔️ comer o pão prateado para ganhar 5 pontos.
 
 ## Distribuição
 
@@ -62,7 +66,7 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 2.para iniciar basta apenas clicar na tela
 
 
-3.clique constante mente para que o pássaro voe
+3.clique constante mente para que o pombo voe
 
 
 4.passe entre os Canos, caso bata morrera
@@ -83,6 +87,37 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 
 ![game_over](https://user-images.githubusercontent.com/83432335/235333505-44bc8449-c589-4246-935c-1ec4bbc5cb36.png)
 
+===========================================================================
+
+2-Sprites do game
+🔹-background
+
+![fundo2](https://user-images.githubusercontent.com/83432335/235333854-059f8f30-f121-4876-9cc8-affd84693c5b.png)
+
+===========================================================================
+🔹-icone
+
+![icone](https://user-images.githubusercontent.com/83432335/235333893-610aff91-ab61-4df0-b8a8-ce3b21ea0180.png)
+
+===========================================================================
+🔹-Pombo
+
+![Walk](https://user-images.githubusercontent.com/83432335/235333916-12a165bc-e439-45f0-8193-2d5060493b6e.png)
+
+===========================================================================
+🔹-pão dourado
+
+![pao_ouro](https://user-images.githubusercontent.com/83432335/235333928-2ce70f0a-3ae6-4c3c-b185-cbbb8c99bce7.png)
+
+===========================================================================
+🔹-pão prateado
+
+![pao_prata](https://user-images.githubusercontent.com/83432335/235333934-d1bc00d6-de5d-4460-9b2e-2cbbd6a2fa54.png)
+
+===========================================================================
+🔹-Tela de splash
+
+![spash](https://user-images.githubusercontent.com/83432335/235333955-aff817f7-f4d3-4325-af1b-b0a1887f0b34.png)
 
 ## Banco de Dados 🗂️
 
