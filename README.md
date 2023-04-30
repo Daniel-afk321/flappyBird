@@ -1,4 +1,4 @@
-# FlappyBird
+# FlappyBird_Custom
 ## Versão: 1.2
 ## Status do Projeto: ✔️ Concluído 
 
@@ -102,4 +102,4 @@ XML
 ## Licença
 The MIT License (MIT)
 
-## Copyright ©️ Ano - FlappyBird
+## Copyright ©️ Ano - FlappyBird_Custom
