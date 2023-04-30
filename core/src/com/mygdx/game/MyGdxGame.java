@@ -106,7 +106,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		canoBaixo = new Texture("cano_baixo_maior.png");
 		canoTope = new Texture("cano_topo_maior.png");
 		gameOver = new Texture("game_over.png");
-		Logo = new Texture("spash.png");
+		Logo = new Texture("logoGame.png");
 	}
 	//esta iniciando os objetos, como a posição inicial vertical do pássaro, a posição horizontal do cano, o espaço entre os canos etc...
 	private void inicializaObjetos()
@@ -260,7 +260,7 @@ public class MyGdxGame extends ApplicationAdapter {
 				alturaDispositivo / 2 + espacoEntreCanos / 2 + posicaoCanoVertical);
 		textoPontuacao.draw(batch, String.valueOf(pontos), larguraDispositivo/2,
 				alturaDispositivo -110);
-		//teste para logo
+		// logo
 		if(estadoJogo == 0)
 		{
 			batch.draw(Logo, larguraDispositivo / 2 - Logo.getWidth()/2,
