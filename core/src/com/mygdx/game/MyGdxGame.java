@@ -31,6 +31,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	private Texture canoTope;
 	private Texture ouro;
 	private Texture prata;
+	private Texture paoAtual;
 	private Texture gameOver;
 	private Texture Logo;
 
@@ -38,7 +39,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	private Circle circuloPassaro;
 	private Rectangle retanguloCanoCima;
 	private Rectangle retanguloCanoBaixo;
-	private Circle Pao;
+
+	private Circle circuloPao;
 
 	private float larguraDispositivo;
 	private float alturaDispositivo;
@@ -52,6 +54,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	private  float espacoEntreCanos;
 	private Random random;
 	private  int pontos=0;
+	private  int prataPao =5;
+	private  int ouroPao =10;
 	private  int pontuacaoMaxima=0;
 	private  boolean passouCano=false;
 	private int estadoJogo = 0;
@@ -107,6 +111,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		canoTope = new Texture("cano_topo_maior.png");
 		gameOver = new Texture("game_over.png");
 		Logo = new Texture("logoGame.png");
+		paoAtual = ouro;
 	}
 	//esta iniciando os objetos, como a posição inicial vertical do pássaro, a posição horizontal do cano, o espaço entre os canos etc...
 	private void inicializaObjetos()
@@ -136,7 +141,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		circuloPassaro = new Circle();
 		retanguloCanoBaixo = new Rectangle();
 		retanguloCanoCima = new Rectangle();
-		Pao = new Circle();
+		circuloPao = new Circle();
 
 		somVoando = Gdx.audio.newSound( Gdx.files.internal("som_asa.wav"));
 		somColisao  = Gdx.audio.newSound( Gdx.files.internal("som_batida.wav"));
@@ -171,12 +176,17 @@ public class MyGdxGame extends ApplicationAdapter {
 				somVoando.play();
 
 			}
+			posicaoPaoHorizontal -= Gdx.graphics.getDeltaTime() * 200;
 			posicaoCanoHorizontal -= Gdx.graphics.getDeltaTime() * 200;
 			if(posicaoCanoHorizontal < -canoTope.getWidth() )
 			{
 				posicaoCanoHorizontal = larguraDispositivo;
 				posicaoCanoVertical = random.nextInt(400) - 200;
 				passouCano = false;
+			}
+			if(posicaoPaoHorizontal <- paoAtual.getWidth() / 2 )
+			{
+                 reiniciaPao();
 			}
 
 			if(posicaoInicialVerticalPassaro > 0 || toqueTela)
@@ -201,6 +211,7 @@ public class MyGdxGame extends ApplicationAdapter {
 				posicaoHorizontalPassaro = 0;
 				posicaoInicialVerticalPassaro = alturaDispositivo / 2;
 				posicaoCanoHorizontal = larguraDispositivo;
+				reiniciaPao();
 			}
 		}
 
@@ -213,9 +224,8 @@ public class MyGdxGame extends ApplicationAdapter {
 				posicaoInicialVerticalPassaro + passaros[0].getHeight() / 2,
 				passaros[0].getWidth() / 2);
 
-		Pao.set(50+ posicaoPaoHorizontal, posicaoPaoVertical, ouro.getWidth());
-
-		Pao.set(50+ posicaoPaoHorizontal ,posicaoPaoVertical, prata.getWidth());
+		circuloPao.set(posicaoPaoHorizontal - (paoAtual.getWidth()),
+				posicaoPaoVertical - (paoAtual.getWidth()),paoAtual.getWidth() / 2);
 
 
 		retanguloCanoBaixo.set(
@@ -231,6 +241,19 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		boolean colidiuCanoCima = Intersector.overlaps(circuloPassaro, retanguloCanoCima);
 		boolean colidiuCanoBaixo = Intersector.overlaps(circuloPassaro, retanguloCanoBaixo);
+		boolean colidiuPaoOuro = Intersector.overlaps(circuloPassaro, circuloPao);
+
+		if(colidiuPaoOuro == true)
+		{
+          if (paoAtual == ouro)
+		  {
+			  pontos += ouroPao;
+			  posicaoPaoVertical = alturaDispositivo * 2;
+		  }else
+		  {
+			  pontos += prataPao;
+		  }
+		}
 
 		if (colidiuCanoCima || colidiuCanoBaixo)
 		{
@@ -249,10 +272,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch.draw(fundo,0,0,larguraDispositivo, alturaDispositivo);
 		batch.draw( passaros[ (int) variacao],
 				50 + posicaoHorizontalPassaro,posicaoInicialVerticalPassaro);
-		//Moeda ouro
-		batch.draw(ouro, 50+ posicaoPaoHorizontal ,posicaoPaoVertical);
-		//Moeda Prata
-		batch.draw(prata, 50 +posicaoPaoHorizontal, posicaoPaoVertical);
 		//cano baixo
 		batch.draw(canoBaixo, posicaoCanoHorizontal,
 				alturaDispositivo / 2 - canoBaixo.getHeight() - espacoEntreCanos/2 + posicaoCanoVertical);
@@ -265,6 +284,14 @@ public class MyGdxGame extends ApplicationAdapter {
 		{
 			batch.draw(Logo, larguraDispositivo / 2 - Logo.getWidth()/2,
 					alturaDispositivo / 2);
+			textoReiniciar.draw(batch, "Toque para iniciar!", larguraDispositivo/2 -120,
+					alturaDispositivo /2 - 10);
+		}
+		if(estadoJogo == 1)
+		{
+			batch.draw(paoAtual, posicaoPaoHorizontal - (paoAtual.getWidth()),
+					posicaoPaoVertical - (paoAtual.getWidth()), paoAtual.getWidth(),
+					paoAtual.getHeight());
 		}
 
 		if (estadoJogo == 2)
@@ -299,6 +326,20 @@ public class MyGdxGame extends ApplicationAdapter {
 		if(variacao > 3)
 		{
 			variacao = 0;
+		}
+	}
+	private void reiniciaPao() {
+		posicaoPaoHorizontal = posicaoCanoHorizontal + canoBaixo.getWidth() + paoAtual.getWidth() +
+				random.nextInt((int) (larguraDispositivo - (paoAtual.getWidth())));
+		posicaoPaoVertical = paoAtual.getHeight() / 2 + random.nextInt((int)
+				alturaDispositivo - paoAtual.getHeight() / 2);
+
+		int randomNewPao = random.nextInt(100);
+		if (randomNewPao < 30) {
+			paoAtual = prata;
+
+		} else {
+			paoAtual = ouro;
 		}
 	}
 	//esta ajustando a viewport do jogo
