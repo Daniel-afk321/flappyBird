@@ -110,7 +110,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		canoBaixo = new Texture("cano_baixo_maior.png");
 		canoTope = new Texture("cano_topo_maior.png");
 		gameOver = new Texture("game_over.png");
-		Logo = new Texture("logoGame.png");
+		Logo = new Texture("Sologo.png");
 		paoAtual = ouro;
 	}
 	//esta iniciando os objetos, como a posição inicial vertical do pássaro, a posição horizontal do cano, o espaço entre os canos etc...
