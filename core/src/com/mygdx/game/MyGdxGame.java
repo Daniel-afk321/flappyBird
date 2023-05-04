@@ -341,7 +341,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		if(estadoJogo == 0)
 		{
 			batch.draw(Logo, larguraDispositivo / 2 - Logo.getWidth()/2,
-					alturaDispositivo / 2);
+					550);
 			textoReiniciar.draw(batch, "Toque para iniciar!", larguraDispositivo/2 -120,
 					alturaDispositivo /2 - 10);
 		}
