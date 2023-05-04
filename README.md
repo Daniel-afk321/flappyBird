@@ -76,8 +76,7 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 
 1-Telas do jogo.
 
-![inicio](https://user-images.githubusercontent.com/83432335/236299877-ea257edc-5a65-46ad-8ed4-8ed06ee66d90.png)
-
+![lg](https://user-images.githubusercontent.com/83432335/236347442-322ddeb0-4c14-4a26-a15d-8366337545c8.png)
 
 
 ===========================================================================
