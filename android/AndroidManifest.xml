@@ -4,15 +4,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icone"
+        android:icon="@drawable/ic_launcher"
         android:isGame="true"
         android:appCategory="game"
-        android:label="Pigeon"
+        android:label="@string/app_name"
         android:theme="@style/GdxTheme" >
         <activity
             android:name="com.mygdx.game.AndroidLauncher"
-            android:label="Pigeon"
-            android:screenOrientation="portrait"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
